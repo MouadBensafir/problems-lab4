@@ -1,7 +1,7 @@
 package recordemo;
 
 public record WeatherData(double temperatureCelsius, String conditions) {
-
+/*
     // Instance method to convert Celsius to Fahrenheit
     public double temperatureFahrenheit() {
         //
@@ -20,4 +20,6 @@ public record WeatherData(double temperatureCelsius, String conditions) {
     public static void main(String[] args) {
 
     }
+     */
+
 }
