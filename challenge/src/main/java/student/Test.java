@@ -26,5 +26,21 @@ public class Test {
         System.out.println("\nArchitecture capacity: " + Major.getMaxCapacity());
         archi.getStudentCount();
         archi.getOccupancyRate();
+
+        // Displaying majors with their students
+        System.out.println("\n=== Summary of majors ===");
+        System.out.println("Computer Science : " + Student.getDefaultMajor().getStudentListAsString());
+        System.out.println("Médecine : " + fms.getStudentListAsString());
+        System.out.println("Architecture : " + archi.getStudentListAsString());
+
+        // Part 2
+        Instructor i1 = new Instructor("Mouad", "Bensafir", "+212612345678", "mouad@um6p.ma", " EMP 123 ");
+        Instructor i2 = new Instructor("Zayd", "Kassimi", "+212634567890", "sara@um6p.ma", "EMP 456");
+        Instructor i3 = new Instructor("Yassine", "Talea", "+212698765432", "amal@um6p.ma", " EMP 789 ");
+
+        Subject sub1 = new Subject("M112", "computation theory");
+        Subject sub2 = new Subject("M112", "introduction to java");
+        System.out.println("- " + sub2.properTitle());
+        System.out.println("- " + sub2.isIntroCourse());
     }
 }

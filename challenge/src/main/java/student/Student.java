@@ -38,6 +38,8 @@ public class Student extends Person {
 
     // Method to get a formatted name
     public String getFullNameFormatted() {
-        return String.format("%s, %s", getSecondName().toUpperCase(), getFirstName().toLowerCase());
+        return String.format("%s %s", getSecondName().toUpperCase(), getFirstName().toLowerCase());
     }
+
+
 }

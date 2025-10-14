@@ -88,4 +88,17 @@ public class Major {
         System.out.println("Occupancy rate = " + result + "%");
         return result;
     }
+
+    public String getStudentListAsString() {
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < studentCount; i++) {
+            sb.append(students[i].getFullNameFormatted());
+            if (i < studentCount - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
 }
