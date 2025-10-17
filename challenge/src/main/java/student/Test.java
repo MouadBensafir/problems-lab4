@@ -33,14 +33,23 @@ public class Test {
         System.out.println("Médecine : " + fms.getStudentListAsString());
         System.out.println("Architecture : " + archi.getStudentListAsString());
 
-        // Part 2
-        Instructor i1 = new Instructor("Mouad", "Bensafir", "+212612345678", "mouad@um6p.ma", " EMP 123 ");
-        Instructor i2 = new Instructor("Zayd", "Kassimi", "+212634567890", "sara@um6p.ma", "EMP 456");
-        Instructor i3 = new Instructor("Yassine", "Talea", "+212698765432", "amal@um6p.ma", " EMP 789 ");
+        // Problem 5
+        Instructor i1 = new Instructor("Mouad", "Bensafir", "+212612345678", "mouad@um6p.ma", " EMP 12 3 ");
+        Instructor i2 = new Instructor("Zayd", "Kassimi", "+212634567890", "sara@um6p.ma", "EMP 4 5 6");
+        Instructor i3 = new Instructor("Yassine", "Talea", "+212698765432", "amal@um6p.ma", " EMP 78 9 ");
 
-        Subject sub1 = new Subject("M112", "computation theory");
-        Subject sub2 = new Subject("M112", "introduction to java");
-        System.out.println("- " + sub2.properTitle());
-        System.out.println("- " + sub2.isIntroCourse());
+        // Some subjects
+        Subject sub1 = new Subject(" m112  ", "computation theory", i1);
+        Subject sub2 = new Subject( " m113   ", "inTRoDuctION to java", i2);
+
+        // Testing methods by order
+        System.out.println("- Clean Employee Number : " + i1.cleanEmployeeNumber());
+        System.out.println("- Normalized code       : " + sub2.normalizedCode());
+        System.out.println("- Proper Title          : " + sub2.properTitle());
+        System.out.println("- Summary Line          : " + i1.summaryLine());
+        System.out.println("- Is it an intro course ? " + sub2.isIntroCourse());
+        System.out.println("\n" + i1.toCard());
+        System.out.println(sub2.syllabusLine());
+        System.out.println("- Instructor 3's name : " + i3.displayName());
     }
 }

@@ -6,22 +6,27 @@ public class Subject {
     private int id;
     private String code;
     private String title;
+    private Instructor instructor;
 
-    public Subject(String code, String title) {
+    public Subject(String code, String title,  Instructor instructor) {
         this.id = NextId++;
         this.code = code;
         this.title = title;
+        this.instructor = instructor;
     }
 
     public int getId() { return this.id; }
     public String getCode() { return this.code; }
     public String getTitle() { return this.title; }
+    public Instructor getInstructor() { return this.instructor; }
 
     public void setCode(String code) { this.code = code; }
     public void setTitle(String title) { this.title = title; }
+    public void setInstructor(Instructor instructor) { this.instructor = instructor; }
 
     public String normalizedCode() {
-        return code.toUpperCase().trim();
+        this.code = code.toUpperCase().trim();
+        return this.code;
     }
 
     public String properTitle() {
@@ -43,7 +48,8 @@ public class Subject {
                 sb.append(" ");
             }
         }
-        return sb.toString();
+        this.title = sb.toString();
+        return this.title;
     }
 
     public boolean isIntroCourse() {
@@ -54,6 +60,15 @@ public class Subject {
             return true;
         }
         return false;
+    }
+
+    public String syllabusLine() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(code).append(" - ").append(title)
+                .append(" (Instructor: ")
+                .append(instructor.getSecondName()).append(" ")
+                .append(instructor.getFirstName()).append(")");
+        return sb.toString();
     }
 
 
